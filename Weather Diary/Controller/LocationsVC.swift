@@ -61,7 +61,7 @@ class LocationsVC: UITableViewController {
     
     func insertNew(_ location: Location) {
         navigationItem.searchController?.isActive = false
-        guard !locations.contains(where: { $0.zipCode == location.zipCode }) else { return }
+        guard !locations.contains(where: { $0.city == location.city && $0.state == location.state }) else { return }
         
         let fetcher = LocationFetchController()
         let hud = MBProgressHUD.showAdded(to: tableView, animated: true)
