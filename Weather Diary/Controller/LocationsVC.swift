@@ -37,8 +37,11 @@ class LocationsVC: UITableViewController {
     }
     
     private func getCurrentWeather() {
+        let hud = MBProgressHUD.showAdded(to: tableView, animated: true)
+        hud.label.text = "Locating.."
         userLocation.update()
         userLocation.completion = {(location) in
+            hud.hide(animated: true)
             self.insertNew(location)
         }
     }

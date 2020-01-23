@@ -24,7 +24,7 @@ struct WeatherResponse: Codable {
     let cod: Int
 
     struct Clouds: Codable {
-        let all: Int
+        let all: Int?
     }
 
     struct Coord: Codable {
@@ -48,7 +48,7 @@ struct WeatherResponse: Codable {
     }
 
     struct Wind: Codable {
-        let speed: Double
-        let deg: Int
+        let speed: Double?
+        let deg: Int?
     }
 }

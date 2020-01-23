@@ -56,7 +56,7 @@ class LocationDetailVC: UITableViewController {
         visibility.text = location?.weather?.visibility.miles
         wind.text = "\(Int(location?.weather?.wind.speed ?? 0)) mph"
         pressure.text = location?.weather?.main.pressure.hg
-        clouds.text = location?.weather?.clouds.all.percent
+        clouds.text = location?.weather?.clouds.all?.percent
 
         if let icon = location?.weather?.weather.first?.icon,
             let iconUrl = URL(string: "http://openweathermap.org/img/wn/\(icon)@2x.png") {
